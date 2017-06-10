@@ -31,15 +31,13 @@ static void ByeWorldStage () {
 	En_ProcessAdd(C);
 	}	
 
-void AppSetup () {
+void AppSetup (En_AppConfig* Config) {
 
-	En_ScreenWidth = 150;
-	En_ScreenHeight = 120;
-
-	En_StageDefault = 0;
-	
-	En_StageAdd(HelloWorldStage);
-	En_StageAdd(ByeWorldStage);
+	Config->ScreenWidth = 1024;
+	Config->ScreenHeight = 768;
+	Config->StageDefault = 0;
+	Config->StageAdd(HelloWorldStage);
+	Config->StageAdd(ByeWorldStage);
 	/*
 	for (int i = 0;i<255;i++) {
 		//printf("%d\n",En_StageAdd(NULL));
